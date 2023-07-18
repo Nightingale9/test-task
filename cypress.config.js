@@ -4,7 +4,6 @@ module.exports = defineConfig({
   
   env:{
     itemsList:["ноутбук", "навушники", "кросівки", "кавомашина", "велосипед", "мікроскоп", "фен", "фарба", "оперативна пам'ять"],
-    //firstPrice: 0,
     price:"",
     request : {
       method: 'GET',
@@ -13,7 +12,6 @@ module.exports = defineConfig({
   },
   
   e2e: {
-    //testIsolation:false,
     defaultCommandTimeout : 10000,
     //"chromeWebSecurity": false,
     setupNodeEvents(on, config) {
