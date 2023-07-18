@@ -2,6 +2,7 @@
 Test task for rozetka online shop
 
 Install Cypress via "npm install --save-dev cypress@12.17.1"
+Run via "npx cypress run --spec "cypress/e2e/filterTest.cy.js" --headed --browser chrome"
 
 Test cases
 Summary: Add items to the basket”
