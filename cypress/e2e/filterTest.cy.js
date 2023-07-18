@@ -9,7 +9,7 @@ describe("Test task",  () => {
         cy.url().should('include', 'rozetka.com');
     });
     it("Add items to basket", () => {
-        const randomNumber = getRandomInt(1, 5);
+        const randomNumber = getRandomInt(2, 5);
         cy.get(':nth-child(' + randomNumber.toString() + ') > .main-categories__link').click();
         cy.get('.menu-main > :nth-child(' + randomNumber.toString() + ') > .menu-main__link > .menu-main__link-title').click();
         cy.get(':nth-child(' + randomNumber.toString() + ') > rz-catalog-tile.ng-star-inserted > app-goods-tile-default > .goods-tile > .goods-tile__inner > .goods-tile__heading > .goods-tile__title')
