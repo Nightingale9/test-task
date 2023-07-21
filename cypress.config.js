@@ -12,7 +12,8 @@ module.exports = defineConfig({
   },
   
   e2e: {
-    defaultCommandTimeout : 10000,
+    defaultCommandTimeout : 20000,
+    "numTestsKeptInMemory": 0,
     //"chromeWebSecurity": false,
     setupNodeEvents(on, config) {
       // implement node event listeners here

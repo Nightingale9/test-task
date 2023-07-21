@@ -9,14 +9,14 @@ describe("Test task",  () => {
         cy.url().should('include', 'rozetka.com');
     });
     it("Add items to basket", () => {
-        const randomNumber = getRandomInt(2, 5);
+        const randomNumber = getRandomInt(1, 5);
         cy.get(':nth-child(' + randomNumber.toString() + ') > .main-categories__link').click();
         cy.get('.menu-main > :nth-child(' + randomNumber.toString() + ') > .menu-main__link > .menu-main__link-title').click();
         cy.get(':nth-child(' + randomNumber.toString() + ') > rz-catalog-tile.ng-star-inserted > app-goods-tile-default > .goods-tile > .goods-tile__inner > .goods-tile__heading > .goods-tile__title')
         .click();
         cy.price('.product-price__big')
             .then($value =>{
-            temp = temp + parseInt($value);
+            temp = temp + parseInt($value, 10);
             Cypress.env("price", temp);
         });
         cy.get('.mode-slim > .buy-button').click();
@@ -24,13 +24,12 @@ describe("Test task",  () => {
         cy.get('.header-menu > .header__button').click();
         cy.get(':nth-child(1) > #fat-menu').click();
         cy.get(':nth-child(2) > .menu-main__link > .menu-main__link-title').click();
-        cy.get('.menu-main > :nth-child(' + randomNumber.toString() + ') > .menu-main__link > .menu-main__link-title').click();
+        cy.get('.menu-main > :nth-child(' + (randomNumber * 2).toString() + ') > .menu-main__link > .menu-main__link-title').click();
         cy.get(':nth-child(' + randomNumber.toString() + ') > rz-catalog-tile.ng-star-inserted > app-goods-tile-default > .goods-tile > .goods-tile__inner > .goods-tile__heading > .goods-tile__title').click();
         cy.price('.product-price__big')
             .then($value =>{
-            temp = temp + parseInt($value);
+            temp = temp + parseInt($value, 10);
             Cypress.env("price", temp);
-            console.log(Cypress.env("price"));
         });
         cy.get('.mode-slim > .buy-button').click();
         cy.price('.cart-receipt__sum-price > :nth-child(1)').should(($value) => {
