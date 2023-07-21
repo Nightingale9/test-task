@@ -1,5 +1,5 @@
 # test-task
-Test task for rozetka online shop
+Automated test cases for rozetka.com.ua
 
 Install Cypress via "npm install --save-dev cypress@12.17.1"
 Run via "npx cypress run --spec "cypress/e2e/filterTest.cy.js" --headed --browser chrome"
